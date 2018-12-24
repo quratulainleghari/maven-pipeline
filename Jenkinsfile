@@ -17,7 +17,7 @@ pipeline {
         stage ('Build') {
             steps {
                 git "https://github.com/john-smart/game-of-life.git"
-                sh 'mvn -Dmaven.test.failure.ignore=true install' 
+               sh 'clean package'
             }
             post {
                 success {
