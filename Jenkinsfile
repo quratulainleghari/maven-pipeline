@@ -16,6 +16,7 @@ pipeline {
 
         stage ('Build') {
             steps {
+                git "https://github.com/sebsto/webapp.git"
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
             }
             post {
