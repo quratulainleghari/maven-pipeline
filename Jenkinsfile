@@ -17,12 +17,12 @@ pipeline {
         stage ('Build') {
             steps {
                 git "https://github.com/john-smart/game-of-life.git"
-               sh 'mvn clean package'
+               sh 'clean package'
             }
             post {
                 success {
                     archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
-                    junit 'target/surefire-reports/**/*.xml' 
+                    junit '**/target/surefire-reports/*.xml' 
                 }
             }
         }
