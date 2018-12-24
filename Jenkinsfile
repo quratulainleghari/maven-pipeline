@@ -16,7 +16,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                git "https://github.com/sebsto/webapp.git"
+                git "https://github.com/john-smart/game-of-life.git"
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
             }
             post {
